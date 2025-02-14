@@ -10,6 +10,9 @@ WORKDIR /app
 # Клонируем репозиторий из GitHub
 RUN git clone https://github.com/username/repository.git /app
 
+# Добавляем проверку, чтобы убедиться, что CMakeLists.txt находится в нужной директории
+RUN ls -l /app
+
 # Создаем папку для сборки и собираем проект с помощью CMake
 RUN mkdir /app/build && cd /app/build && cmake /app && make
 
