@@ -1,17 +1,17 @@
-# Используем официальный образ Ubuntu
+# Используем образ Ubuntu
 FROM ubuntu:latest
 
-# Устанавливаем зависимости: CMake, компилятор, библиотеки
-RUN apt-get update && apt-get install -y cmake g++ make
+# Устанавливаем Git и другие зависимости
+RUN apt-get update && apt-get install -y git cmake g++ make
 
-# Создаем рабочую директорию в контейнере
+# Клонируем репозиторий из GitHub в папку /app
+RUN git clone https://github.com/username/repository.git /app
+
+# Устанавливаем рабочую директорию на /app (где находится CMakeLists.txt)
 WORKDIR /app
 
-# Копируем все файлы проекта в контейнер
-COPY . .
-
-# Создаем папку для сборки
+# Создаем директорию для сборки и выполняем сборку с CMake
 RUN mkdir build && cd build && cmake .. && make
 
-# Устанавливаем команду по умолчанию (запуск приложения)
-CMD ["./build/MyProject"]
+# Указываем команду, которая будет выполняться при запуске контейнера
+CMD ["./build/my_project"]
