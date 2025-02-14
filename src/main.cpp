@@ -2,8 +2,9 @@
 #include "utils.cpp"
 
 int main() {
-    std::cout << "Привет, мир!" << std::endl;
-    printHello();
+    int a = 10, b = 5;
+    
+    std::cout << "Сложение: " << add(a, b) << std::endl;  
+    std::cout << "Вычитание: " << subtract(a, b) << std::endl;
     return 0;
 }
-
