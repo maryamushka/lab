@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Указываем имя проекта
-project(MyProject)
+project(my_project)
 
 # Указываем стандарт C++
 set(CMAKE_CXX_STANDARD 11)
@@ -11,5 +11,5 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(src)
 
 # Создаём исполняемый файл из исходников
-add_executable(MyProject src/main.cpp src/utils.cpp)
+add_executable(my_project src/main.cpp src/utils.cpp)
 
