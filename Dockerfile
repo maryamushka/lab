@@ -8,13 +8,13 @@ RUN apt-get update && apt-get install -y cmake g++ make git
 WORKDIR /app
 
 # Клонируем репозиторий из GitHub
-RUN git clone https://github.com/username/repository.git /app
+RUN git clone https://github.com/maryamushka/lab .
 
-# Добавляем проверку, чтобы убедиться, что CMakeLists.txt находится в нужной директории
+# Проверяем содержимое директории /app
 RUN ls -l /app
 
 # Создаем папку для сборки и собираем проект с помощью CMake
-RUN mkdir /app/build && cd /app/build && cmake /app && make
+RUN mkdir build && cd build && cmake .. && make
 
 # Устанавливаем команду по умолчанию (запуск приложения)
 CMD ["./build/my_project"]
