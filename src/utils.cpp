@@ -16,3 +16,7 @@ int divide(int a, int b) {
     if (b == 0) return 0; // защита от деления на 0
     return a / b;
 }
+// Функция умножения
+int multiply(int a, int b) {
+    return a * b;
+}
