@@ -1,0 +1,29 @@
+name: CMake Build
+
+on:
+  push:
+    branches:
+      - main  # Запускать при пуше в main
+  pull_request:
+    branches:
+      - main  # Проверять PR в main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Используем Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y cmake g++ make
+
+      - name: Configure CMake
+        run: mkdir build && cd build && cmake ..
+
+      - name: Build project
+        run: cd build && make
+
+      - name: Run executable
+        run: ./build/my_project  # Запуск программы (замени на свое имя файла)
