@@ -1,21 +1,18 @@
-#include <iostream>
+#include "utils.h"
 
-int add(int x, int y) {
-    return x + y;
+int add(int a, int b) {
+    return a + b;
 }
 
-int subtract(int x, int y) {
-    return x - y;
+int subtract(int a, int b) {
+    return a - b;
 }
 
-int multiply(int x, int y) {
-    return x * y;
+int multiply(int a, int b) {
+    return a * b;
 }
 
-float divide(int x, int y) {
-    if (y == 0) {
-        std::cerr << "Ошибка: деление на ноль!" << std::endl;
-        return 0; 
-    }
-    return static_cast<float>(x) / y;
+int divide(int a, int b) {
+    if (b == 0) return 0; // защита от деления на 0
+    return a / b;
 }
