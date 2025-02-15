@@ -1,10 +1,10 @@
 #include <iostream>
-#include "utils.cpp"
+#include "utils.h"
 
 int main() {
-    int a = 10, b = 5;
-    
-    std::cout << "Сложение: " << add(a, b) << std::endl;  
-    std::cout << "Вычитание: " << subtract(a, b) << std::endl;
+    std::cout << "2 + 3 = " << add(2, 3) << std::endl;
+    std::cout << "5 - 2 = " << subtract(5, 2) << std::endl;
+    std::cout << "4 * 3 = " << multiply(4, 3) << std::endl;
+    std::cout << "8 / 2 = " << divide(8, 2) << std::endl;
     return 0;
 }
