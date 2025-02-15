@@ -8,3 +8,4 @@ int main() {
     std::cout << "8 / 2 = " << divide(8, 2) << std::endl;
     return 0;
 }
+
